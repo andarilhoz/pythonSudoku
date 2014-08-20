@@ -1,0 +1,68 @@
+import random
+
+tabuleiro = [[[ 0 for _ in range (3)] for _ in range(3)] for _ in range(3) for _ in range(3)] 
+
+
+
+numeros = [1,2,3,4,5,6,7,8,9]
+numeroLinhas = [0,1,2,3,4,5,6,7,8]
+linhasColunas = [0,1,2]
+
+
+for  _ in range (10):
+    tabuleiro[random.choice(numeroLinhas)][random.choice(linhasColunas)][random.choice(linhasColunas)] = random.choice(numeros)
+
+
+for elem in tabuleiro:
+    print elem
+    
+while(True):
+    userInputLine = raw_input("Digite o numero da linha (1 - 9)")
+    if(userInputLine == "sair"):
+        break
+    userInputColun = raw_input("Digite uma coluna (1-9)")
+    if(userInputColun == "sair"):
+        break
+    elif (userInputColun == "1"):
+        userInputColun = "0"
+        userInputBlock = "0"
+    elif(userInputColun == "2"):
+        userInputBlock = "0"
+        userInputColun = "1"
+    elif(userInputColun == "3"):
+        userInputBlock = "0"
+        userInputColun = "2"
+    elif(userInputColun == "4"):
+        userInputColun = "0"
+        userInputBlock = "1"
+    elif(userInputColun == "5"):
+        userInputColun = "1"
+        userInputBlock = "1"
+    elif(userInputColun == "6"):
+        userInputBlock = "1"
+        userInputColun = "2"
+    elif(userInputColun == "7"):
+        userInputBlock = "2"
+        userInputColun = "0"
+    elif(userInputColun == "8"):
+        userInputBlock = "2"
+        userInputColun = "1"
+    elif(userInputColun =="9"):
+        userInputBlock = "2"
+        userInputColun = "2"
+
+    userInputNumber = raw_input("digite o numero")
+    if(userInputNumber == "sair"):
+        break
+    
+
+
+    else:
+        tabuleiro[(int(userInputLine)-1)][int(userInputBlock)][int(userInputColun)] = int(userInputNumber)
+
+    for elem in tabuleiro:
+        print elem
+
+
+
+    
